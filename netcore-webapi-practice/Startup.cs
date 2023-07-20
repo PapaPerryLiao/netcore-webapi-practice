@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using netcore_webapi_practice.Contexts;
+using netcore_webapi_practice.Repository;
 
 namespace netcore_webapi_practice
 {
@@ -21,6 +21,7 @@ namespace netcore_webapi_practice
 
             services.AddDbContext<NorthwindDbContext>(option => option.UseSqlServer(connectionString));
 
+            services.AddTransient<IProductRepository, ProductRepository>();
         }
 
     }
