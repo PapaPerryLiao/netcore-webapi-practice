@@ -7,8 +7,8 @@ namespace netcore_webapi_practice.Repository
         Task<IEnumerable<Product>> GetProducts();
 
         Task<Product> GetProductById(int productId);
-        Task<int> AddProduct(Product product);
-        Task UpdateProduct(Product product);
+        Task<Product> AddProduct(Product product);
+        Task<Product> UpdateProduct(Product product);
         Task DeleteProduct(int productId);
     }
 }

@@ -22,14 +22,14 @@ namespace netcore_webapi_practice.Service
             return await _productRepository.GetProductById(productId);
         }
 
-        public async Task<int> AddProduct(Product product)
+        public async Task<Product> AddProduct(Product product)
         {
             return await _productRepository.AddProduct(product);
         }
 
-        public async Task UpdateProduct(Product product)
+        public async Task<Product> UpdateProduct(Product product)
         {
-            await _productRepository.UpdateProduct(product);
+            return await _productRepository.UpdateProduct(product);
         }
 
         public async Task DeleteProduct(int productId)

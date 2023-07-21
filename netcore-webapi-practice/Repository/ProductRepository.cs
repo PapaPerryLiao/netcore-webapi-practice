@@ -23,17 +23,18 @@ namespace netcore_webapi_practice.Repository
             return await _dbContext.Products.FirstOrDefaultAsync(p => p.ProductId == productId);
         }
 
-        public async Task<int> AddProduct(Product product)
+        public async Task<Product> AddProduct(Product product)
         {
             _dbContext.Products.Add(product);
             await _dbContext.SaveChangesAsync();
-            return product.ProductId;
+            return product;
         }
 
-        public async Task UpdateProduct(Product product)
+        public async Task<Product> UpdateProduct(Product product)
         {
             _dbContext.Entry(product).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
+            return product;
         }
 
         public async Task DeleteProduct(int productId)
